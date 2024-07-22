@@ -1,4 +1,4 @@
-package entidades;
+package entidades.estatiscas;
 import java.util.List;
 
 public class Estatisticas<D> {
