@@ -1,5 +1,7 @@
 package application;
 import entidades.distribuicoes.concretes.DistribuicaoNormal;
+import entidades.estatiscas.Estatisticas;
+import entidades.distribuicoes.concretes.DistribuicaoUniforme;
 
 public class main {
 
@@ -13,7 +15,6 @@ public class main {
         Estatisticas<DistribuicaoUniforme> estatisticasUniforme = new Estatisticas<>(distribuicaoUniforme);
         Estatisticas<DistribuicaoExponencial> estatisticasExponencial = new Estatisticas<>(distribuicaoExponencial);
         Estatisticas<DistribuicaoPoisson> estatisticasPoisson = new Estatisticas<>(distribuicaoPoisson);
-
         System.out.println("Distribuição Normal:");
         estatisticasNormal.imprimirValoresGerados(5);
         estatisticasNormal.imprimirMedia();
@@ -35,7 +36,5 @@ public class main {
         estatisticasPoisson.imprimirVariancia();
     }
 
-
-	}
 
 }
