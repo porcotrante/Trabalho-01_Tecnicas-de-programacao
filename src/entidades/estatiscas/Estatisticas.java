@@ -1,18 +1,30 @@
 package entidades.estatiscas;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Random;
+
+import entidades.distribuicoes.abstracts.Distribuicao;
 
 public class Estatisticas<D> {
     D dist;
-    List<Double> sequencia;
+    ArrayList<Double> sequencia;
     Double media;
     Double variancia;
 
-    Estatisticas(D dist){
+    public Estatisticas(D dist){
         this.dist = dist;
+        this.sequencia = new ArrayList<>();
     }
 
-    void imprimirValoresGerados(int numberOfValues){
-        //TODO método que gera a sequência, a imprime e a guarda no campo sequencia
+    public void imprimirValoresGerados(int numeroDeValores){
+        Random rand = new Random();
+
+        for(int i = 0; i < numeroDeValores; i++){
+            sequencia.add(((Distribuicao)dist).calcular(rand.nextInt(5)));
+        }
+
+        for (Double e : sequencia) {
+            System.out.printf("%.3f\n", e);
+        }
     }
 
     void imprimirMedia(){
