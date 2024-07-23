@@ -1,5 +1,5 @@
 package application;
-import entidades.Distribuicao.abstracts.Distribuicao;
+import entidades.distribuicoes.concretes.DistribuicaoNormal;
 
 public class main {
 
