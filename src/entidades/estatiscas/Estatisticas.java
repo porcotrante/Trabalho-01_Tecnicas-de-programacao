@@ -5,6 +5,7 @@ import java.util.Random;
 
 import entidades.distribuicoes.abstracts.Distribuicao;
 import entidades.distribuicoes.concretes.DistribuicaoNormal;
+import entidades.distribuicoes.concretes.DistribuicaoUniforme;
 
 public class Estatisticas<D> {
     D dist;
@@ -39,6 +40,11 @@ public class Estatisticas<D> {
         if (dist instanceof DistribuicaoNormal){
             System.out.printf("Média: %d\n",((DistribuicaoNormal)dist).getMedia());
         }
+        else if (dist instanceof DistribuicaoUniforme){
+            double media = (((DistribuicaoUniforme)dist).getLimitA() + ((DistribuicaoUniforme)dist).getLimitB())/2;
+
+            System.out.printf("Média %.1f\n", media);
+        }
         else{
             System.out.println("Erro, média não encontrada");
         }
@@ -48,6 +54,11 @@ public class Estatisticas<D> {
         //TODO método que calcula (se necessário) e imprime a variancia baseada na sequencia
         if (dist instanceof DistribuicaoNormal){
             System.out.printf("Variância: %.1f\n" ,(Math.pow(((DistribuicaoNormal)dist).getDesvio(), 2)));
+        }
+        else if (dist instanceof DistribuicaoUniforme){
+            double variancia = (Math.pow(((DistribuicaoUniforme)dist).getLimitA() + ((DistribuicaoUniforme)dist).getLimitB(), 0))/12;
+
+            System.out.printf("Variância %.1f\n",variancia);
         }
         else{
             System.out.println("Erro, variância não encontrada");
