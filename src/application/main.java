@@ -1,7 +1,9 @@
 package application;
 import entidades.distribuicoes.concretes.DistribuicaoNormal;
-import entidades.estatiscas.Estatisticas;
+import entidades.distribuicoes.concretes.DistribuicaoPoisson;
 import entidades.distribuicoes.concretes.DistribuicaoUniforme;
+import entidades.estatiscas.Estatisticas;
+
 
 public class main {
 
