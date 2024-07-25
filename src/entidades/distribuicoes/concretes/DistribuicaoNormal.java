@@ -3,12 +3,20 @@ package entidades.distribuicoes.concretes;
 import entidades.distribuicoes.abstracts.Distribuicao;
 
 public class DistribuicaoNormal implements Distribuicao{
-    int media;
-    int desvioPadrao;
+    private Integer media;
+    private Integer desvioPadrao;
 
     public DistribuicaoNormal(int media, int desvioPadrao){
         this.media = media;
         this.desvioPadrao = desvioPadrao;
+    }
+
+    public Integer getMedia(){
+        return media;
+    }
+
+    public Integer getDesvio(){
+        return desvioPadrao;
     }
 
     public Double calcular(Integer x){
