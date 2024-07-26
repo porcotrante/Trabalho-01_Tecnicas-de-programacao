@@ -1,6 +1,7 @@
-package entidades.estatiscas;
+package entidades.estatisticas;
 
 import entidades.distribuicoes.abstracts.Distribuicao;
+import entidades.distribuicoes.concretes.DistribuicaoExponencial;
 import entidades.distribuicoes.concretes.DistribuicaoNormal;
 import entidades.distribuicoes.concretes.DistribuicaoUniforme;
 import entidades.distribuicoes.concretes.DistribuicaoPoisson;
@@ -32,7 +33,13 @@ public class Estatisticas<D> {
         else if (dist instanceof DistribuicaoPoisson) {
             System.out.printf("Média: %d\n", ((DistribuicaoPoisson)dist).getLambda());
         }
-        else{
+        else if (dist instanceof DistribuicaoExponencial) {
+            double l = ((DistribuicaoExponencial)dist).getLambda();
+
+            System.out.printf("Média: %.1f\n", (1 / l));
+        }
+
+        else {
             System.out.println("Erro, média não encontrada");
         }
     }
@@ -48,9 +55,14 @@ public class Estatisticas<D> {
             System.out.printf("Variância %.1f\n",variancia);
         }
         else if (dist instanceof DistribuicaoPoisson) {
-            System.out.printf("Variância: %d", ((DistribuicaoPoisson)dist).getLambda());
+            System.out.printf("Variância: %d\n", ((DistribuicaoPoisson)dist).getLambda());
         }
-        else{
+        else if (dist instanceof DistribuicaoExponencial) {
+            double l = ((DistribuicaoExponencial)dist).getLambda();
+
+            System.out.printf("Variância: %.1f\n", (1 / Math.pow(l,2)));
+        }
+        else {
             System.out.println("Erro, variância não encontrada");
         }
     }
