@@ -6,6 +6,7 @@ import java.util.Random;
 import entidades.distribuicoes.abstracts.Distribuicao;
 import entidades.distribuicoes.concretes.DistribuicaoNormal;
 import entidades.distribuicoes.concretes.DistribuicaoUniforme;
+import entidades.distribuicoes.concretes.DistribuicaoPoisson;
 
 public class Estatisticas<D> {
     D dist;
@@ -21,16 +22,25 @@ public class Estatisticas<D> {
     public void imprimirValoresGerados(int numeroDeValores){
         Random rand = new Random();
 
-        for(int i = 0; i < numeroDeValores; i++){
-            int value = rand.nextInt(2 + 2 + 1) - 2;
-            sequencia.add(value);
+        if (dist instanceof DistribuicaoNormal || dist instanceof DistribuicaoUniforme) {
+            //para funções cujo domínio permite, o valores gerado são no range de -2 a 2
+            for(int i = 0; i < numeroDeValores; i++){
+                int value = rand.nextInt(2 + 2 + 1) - 2;
+                sequencia.add(value);
+            }
+        }
+
+        else{
+            for(int i = 0; i < numeroDeValores; i++){
+                int value = rand.nextInt(2);
+                sequencia.add(value);
+            }
         }
 
         Collections.sort(sequencia);
 
-        for (Integer e : sequencia) {
-            System.out.printf("%.3f ", 
-            ((Distribuicao)dist).calcular(e));
+        for (Double e : ((Distribuicao)dist).gerarValores(numeroDeValores)) {
+            System.out.printf("%.2f, ", e);
         }
     }
 
@@ -43,7 +53,10 @@ public class Estatisticas<D> {
         else if (dist instanceof DistribuicaoUniforme){
             double media = (((DistribuicaoUniforme)dist).getLimitA() + ((DistribuicaoUniforme)dist).getLimitB())/2;
 
-            System.out.printf("Média %.1f\n", media);
+            System.out.printf("Média: %.1f\n", media);
+        }
+        else if (dist instanceof DistribuicaoPoisson) {
+            System.out.printf("Média: %d\n", ((DistribuicaoPoisson)dist).getLambda());
         }
         else{
             System.out.println("Erro, média não encontrada");
@@ -59,6 +72,9 @@ public class Estatisticas<D> {
             double variancia = (Math.pow(((DistribuicaoUniforme)dist).getLimitA() + ((DistribuicaoUniforme)dist).getLimitB(), 0))/12;
 
             System.out.printf("Variância %.1f\n",variancia);
+        }
+        else if (dist instanceof DistribuicaoPoisson) {
+            System.out.printf("Variância: %d", ((DistribuicaoPoisson)dist).getLambda());
         }
         else{
             System.out.println("Erro, variância não encontrada");

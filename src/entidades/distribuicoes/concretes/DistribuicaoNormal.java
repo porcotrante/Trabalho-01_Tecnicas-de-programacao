@@ -1,8 +1,8 @@
 package entidades.distribuicoes.concretes;
 
-import entidades.distribuicoes.abstracts.Distribuicao;
+import entidades.distribuicoes.abstracts.DistribuicoesDominioReal;
 
-public class DistribuicaoNormal implements Distribuicao{
+public class DistribuicaoNormal extends DistribuicoesDominioReal{
     private Integer media;
     private Integer desvioPadrao;
 

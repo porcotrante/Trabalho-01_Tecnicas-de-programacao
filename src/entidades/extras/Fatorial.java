@@ -15,7 +15,7 @@ public class Fatorial {
 			return memoria.get(x);
 		}
 	
-		Long resultado = x * calculaFatorial(x - 1);
+		long resultado = x * calculaFatorial(x - 1);
 		memoria.put(x, resultado);
 		return resultado;
 	}
