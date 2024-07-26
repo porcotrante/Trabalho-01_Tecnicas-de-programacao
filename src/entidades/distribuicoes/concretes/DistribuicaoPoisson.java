@@ -6,16 +6,16 @@ import entidades.extras.Fatorial;
 
 
 public class DistribuicaoPoisson extends DistribuicoesLambda {
-	
-	private int valor_lambda; 
 
-	
-	public DistribuicaoPoisson(int lambda){
-		this.valor_lambda = lambda;
+	public DistribuicaoPoisson(Integer lambda){
+		super.setLambda(lambda);
 	}
+
 	@Override
 	public Double calcular(Integer x) {
-		Double numerador = Math.pow(valor_lambda, x) * Math.exp(-valor_lambda);
+		Integer lambda = super.getLambda();
+		
+		Double numerador = Math.pow(lambda, x) * Math.exp(-lambda);
 		Long denominador = Fatorial.calculaFatorial(x); 
 		return numerador / denominador; 
 	}

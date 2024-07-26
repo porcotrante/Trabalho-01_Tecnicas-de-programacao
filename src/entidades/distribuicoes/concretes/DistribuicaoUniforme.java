@@ -1,8 +1,9 @@
 package entidades.distribuicoes.concretes;
 
-import entidades.distribuicoes.abstracts.Distribuicao;
+import java.util.ArrayList;
+import entidades.distribuicoes.abstracts.DistribuicoesDominioPositivo;
 
-public class DistribuicaoUniforme implements Distribuicao {
+public class DistribuicaoUniforme extends DistribuicoesDominioPositivo {
     private Integer lim_inf;
     private Integer lim_sup;
 
