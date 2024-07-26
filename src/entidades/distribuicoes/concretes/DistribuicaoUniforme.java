@@ -1,6 +1,5 @@
 package entidades.distribuicoes.concretes;
 
-import java.util.ArrayList;
 import entidades.distribuicoes.abstracts.DistribuicoesDominioPositivo;
 
 public class DistribuicaoUniforme extends DistribuicoesDominioPositivo {
