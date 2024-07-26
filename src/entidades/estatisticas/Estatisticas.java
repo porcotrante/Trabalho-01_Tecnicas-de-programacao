@@ -20,7 +20,6 @@ public class Estatisticas<D> {
     }
 
     public void imprimirMedia(){
-        //TODO método que calcula (se necessário) e imprime a média baseada na sequencia
         System.out.print("\n");
         if (dist instanceof DistribuicaoNormal){
             System.out.printf("Média: %d\n",((DistribuicaoNormal)dist).getMedia());
@@ -45,7 +44,6 @@ public class Estatisticas<D> {
     }
 
     public void imprimirVariancia(){
-        //TODO método que calcula (se necessário) e imprime a variancia baseada na sequencia
         if (dist instanceof DistribuicaoNormal){
             System.out.printf("Variância: %.1f\n" ,(Math.pow(((DistribuicaoNormal)dist).getDesvio(), 2)));
         }
