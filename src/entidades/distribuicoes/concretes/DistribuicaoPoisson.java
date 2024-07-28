@@ -20,4 +20,12 @@ public class DistribuicaoPoisson extends DistribuicoesLambda {
 		return numerador / denominador; 
 	}
 
+	public Double calcMedia() {
+		return (double) super.getLambda();
+	}
+
+	public Double calcVariancia() {
+		return (double) super.getLambda();
+	}
+
 }

@@ -11,12 +11,12 @@ public class DistribuicaoNormal extends DistribuicoesDominioReal{
         this.desvioPadrao = desvioPadrao;
     }
 
-    public Integer getMedia(){
-        return media;
+    public Double calcMedia(){
+        return (double) media;
     }
 
-    public Integer getDesvio(){
-        return desvioPadrao;
+    public Double calcVariancia(){
+        return Math.pow(desvioPadrao, 2);
     }
 
     public Double calcular(Integer x){
