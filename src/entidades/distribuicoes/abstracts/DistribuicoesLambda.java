@@ -1,6 +1,6 @@
 package entidades.distribuicoes.abstracts;
 
-public abstract class DistribuicoesLambda extends DistribuicoesDominioPositivo {
+public abstract class DistribuicoesLambda extends DistribuicoesDominioReal {
    private Integer lambda;
 
    public Integer getLambda(){

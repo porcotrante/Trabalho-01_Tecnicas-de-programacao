@@ -14,9 +14,11 @@ public class DistribuicaoPoisson extends DistribuicoesLambda {
 	@Override
 	public Double calcular(Integer x) {
 		Integer lambda = super.getLambda();
+
+		Integer abs_x = Math.abs(x);
 		
-		Double numerador = Math.pow(lambda, x) * Math.exp(-lambda);
-		Long denominador = Fatorial.calculaFatorial(x); 
+		Double numerador = Math.pow(lambda, abs_x) * Math.exp(-lambda);
+		Long denominador = Fatorial.calculaFatorial(abs_x); 
 		return numerador / denominador; 
 	}
 

@@ -1,8 +1,8 @@
 package entidades.distribuicoes.concretes;
 
-import entidades.distribuicoes.abstracts.DistribuicoesDominioPositivo;
+import entidades.distribuicoes.abstracts.DistribuicoesDominioReal;
 
-public class DistribuicaoUniforme extends DistribuicoesDominioPositivo {
+public class DistribuicaoUniforme extends DistribuicoesDominioReal {
     private Integer lim_inf;
     private Integer lim_sup;
 
