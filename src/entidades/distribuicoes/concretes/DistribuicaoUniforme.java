@@ -1,8 +1,8 @@
 package entidades.distribuicoes.concretes;
 
-import entidades.distribuicoes.abstracts.DistribuicoesDominioPositivo;
+import entidades.distribuicoes.abstracts.DistribuicoesDominioReal;
 
-public class DistribuicaoUniforme extends DistribuicoesDominioPositivo {
+public class DistribuicaoUniforme extends DistribuicoesDominioReal {
     private Integer lim_inf;
     private Integer lim_sup;
 
@@ -11,18 +11,18 @@ public class DistribuicaoUniforme extends DistribuicoesDominioPositivo {
         this.lim_sup = b;
     }
 
-    public Integer getLimitA(){
-        return lim_inf;
-    }
-
-    public Integer getLimitB(){
-        return lim_sup;
-    }
-
     public Double calcular(Integer x) {
         if (x < lim_inf | x > lim_sup) {
             return 0.0;
         }
-        return (double)(1 / (lim_sup - lim_inf));
+        return (double) (1 / (lim_sup - lim_inf));
+    }
+
+    public Double calcMedia() {
+        return (double) ((lim_inf + lim_sup)/2);
+    }
+
+    public Double calcVariancia() {
+        return (Math.pow(lim_inf + lim_sup, 2))/2;
     }
 }
