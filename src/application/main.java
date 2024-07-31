@@ -9,7 +9,7 @@ import entidades.estatisticas.Estatisticas;
 public class main {
 
 	public static void main(String[] args) {
-		DistribuicaoNormal distribuicaoNormal = new DistribuicaoNormal(0, 1);
+	DistribuicaoNormal distribuicaoNormal = new DistribuicaoNormal(0, 1);
         DistribuicaoUniforme distribuicaoUniforme = new DistribuicaoUniforme(0, 1);
         DistribuicaoExponencial distribuicaoExponencial = new DistribuicaoExponencial(1);
         DistribuicaoPoisson distribuicaoPoisson = new DistribuicaoPoisson(2);
