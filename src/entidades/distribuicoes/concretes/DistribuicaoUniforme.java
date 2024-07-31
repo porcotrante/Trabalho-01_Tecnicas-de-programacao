@@ -19,7 +19,7 @@ public class DistribuicaoUniforme extends DistribuicoesDominioReal {
     }
 
     public Double calcMedia() {
-        return (double) ((lim_inf + lim_sup)/2);
+        return (double) (lim_inf + lim_sup) / 2;
     }
 
     public Double calcVariancia() {
