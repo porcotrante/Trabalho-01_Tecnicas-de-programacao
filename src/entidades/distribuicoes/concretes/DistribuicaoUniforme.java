@@ -15,7 +15,7 @@ public class DistribuicaoUniforme extends DistribuicoesDominioReal {
         if (x < lim_inf | x > lim_sup) {
             return 0.0;
         }
-        return (double) (1 / (lim_sup - lim_inf));
+        return (double) 1 / (lim_sup - lim_inf);
     }
 
     public Double calcMedia() {
