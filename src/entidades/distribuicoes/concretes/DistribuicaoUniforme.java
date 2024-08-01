@@ -23,6 +23,6 @@ public class DistribuicaoUniforme extends DistribuicoesDominioReal {
     }
 
     public Double calcVariancia() {
-        return (Math.pow(lim_inf + lim_sup, 2))/2;
+        return (Math.pow(lim_sup - lim_inf, 2)) / 12;
     }
 }
